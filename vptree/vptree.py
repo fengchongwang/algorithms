@@ -62,7 +62,7 @@ class PriorityQueue(object):
 
     def push(self, priority, item):
         self.queue.append((priority, item))
-        self.queue.sort()
+        self.queue.sort(key=lambda s:s[0])
         if self.size is not None and len(self.queue) > self.size:
             self.queue.pop()
 
